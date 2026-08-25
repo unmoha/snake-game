@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101815" />
+    <title>Neon Orchard | Snake</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="Neon Orchard home"><span class="brand-mark">+</span><span>NEON<br /><b>ORCHARD</b></span></a>
+        <div class="session-meta"><span class="live-dot"></span> SESSION 04 <span class="meta-divider"></span> LOCAL PLAY</div>
+        <button class="icon-button" id="soundButton" type="button" aria-label="Toggle sound" title="Toggle sound">◖</button>
+      </header>
+
+      <section class="hero-copy">
+        <p class="eyebrow">01 / FIELD NOTES</p>
+        <h1>Eat well.<br /><em>Grow bright.</em></h1>
+        <p class="intro">A quiet little arcade for loud instincts.<br />Guide the light through the orchard.</p>
+      </section>
+
+      <section class="game-layout" aria-label="Snake game">
+        <aside class="stats-panel">
+          <div class="stat-block"><span class="label">CURRENT SCORE</span><strong id="score">000</strong><span class="accent-line"></span></div>
+          <div class="stat-block"><span class="label">BEST RUN</span><strong id="best">000</strong><span class="muted-copy">Personal record</span></div>
+          <div class="stat-block"><span class="label">FRUIT EATEN</span><strong id="fruitCount">00</strong><span class="muted-copy">Keep the rhythm</span></div>
+          <div class="field-legend"><span class="legend-swatch"></span><span>ORCHARD GRID<br /><b>20 × 20 FIELD</b></span></div>
+        </aside>
+
+        <div class="game-column">
+          <div class="game-frame">
+            <div class="frame-top"><span id="statusText">READY WHEN YOU ARE</span><span class="key-hint">ARROW KEYS <i>or</i> WASD</span></div>
+            <canvas id="gameCanvas" width="640" height="640" aria-label="Snake game board"></canvas>
+            <div class="board-overlay" id="overlay"><div class="overlay-icon">+</div><h2 id="overlayTitle">Ready to grow?</h2><p id="overlayCopy">Press any direction to start your run.</p><button class="primary-button" id="startButton" type="button">START RUN <span>↗</span></button></div>
+            <div class="frame-bottom"><span>TIP 01 / STAY CURIOUS</span><span><b id="speedLabel">MEDIUM</b> SPEED</span></div>
+          </div>
+          <div class="mobile-controls" aria-label="Direction controls">
+            <button type="button" data-direction="up" aria-label="Move up">↑</button>
+            <div><button type="button" data-direction="left" aria-label="Move left">←</button><button type="button" data-direction="down" aria-label="Move down">↓</button><button type="button" data-direction="right" aria-label="Move right">→</button></div>
+          </div>
+        </div>
+
+        <aside class="control-panel">
+          <p class="eyebrow">02 / CONTROLS</p>
+          <h2>Find your<br /><em>flow.</em></h2>
+          <p class="control-copy">Collect the fruit. Keep moving. The field is yours to map.</p>
+          <div class="control-actions"><button class="action-button" id="pauseButton" type="button" disabled><span>Ⅱ</span> PAUSE <kbd>SPACE</kbd></button><button class="action-button" id="restartButton" type="button"><span>↻</span> RESTART <kbd>R</kbd></button></div>
+          <div class="range-wrap"><label for="speedRange">PACE <span id="paceValue">MEDIUM</span></label><input id="speedRange" type="range" min="1" max="3" value="2" /><div class="range-labels"><span>CALM</span><span>FOCUSED</span><span>FERAL</span></div></div>
+          <div class="quote">“The best path is<br />the one you make.”<span>— FIELD GUIDE</span></div>
+        </aside>
+      </section>
+      <footer><span>NEON ORCHARD / EST. 2024</span><span>MADE FOR THE NEXT MOVE <b>✦</b></span></footer>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
